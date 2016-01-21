@@ -57,7 +57,7 @@ public class Ui extends JFrame {
 		mainPanel.add(doItButton, BorderLayout.CENTER);
 	}
 
-	private String reverseText(String inputText) {
+	String reverseText(String inputText) {
 		String reverse;
 		if (inputText.length() >= 4) {
 			reverse = inputText.charAt(0) +
