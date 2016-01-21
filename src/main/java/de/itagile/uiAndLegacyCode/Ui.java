@@ -49,6 +49,7 @@ public class Ui extends JFrame {
 		doItButton.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent event) {
+				// 1. change point start, add ability to handle multiple words
 				if(input.getText().length()>=4) {
 					label.setText(
 							"Result: " +
@@ -58,6 +59,7 @@ public class Ui extends JFrame {
 				} else {
 					label.setText("Result: " + input.getText());
 				}
+				// 1. change point end
 			}
 		});
 
