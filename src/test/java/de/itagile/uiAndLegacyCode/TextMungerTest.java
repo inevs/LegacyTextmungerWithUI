@@ -1,6 +1,7 @@
 package de.itagile.uiAndLegacyCode;
 
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.equalTo;
@@ -23,6 +24,18 @@ public class TextMungerTest {
 	@Test
 	public void reverses_middle_of_words_with_four_letters_and_more() throws Exception {
 		assertThat(ui.reverseText("abcd"), equalTo("acbd"));
+	}
+
+	@Test
+	@Ignore
+	public void leaves_multiple_words_with_three_letters() throws Exception {
+		assertThat(ui.reverseText("abc abc"), equalTo("abc abc"));
+	}
+
+	@Test
+	@Ignore
+	public void reverses_multiple_words() throws Exception {
+		assertThat(ui.reverseText("abcd efgh"), equalTo("acbd egfh"));
 	}
 
 
