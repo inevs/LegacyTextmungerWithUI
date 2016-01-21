@@ -50,6 +50,7 @@ public class Ui extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent event) {
 				// 1. change point start, add ability to handle multiple words
+				// 2. find test points: test this functionality
 				if(input.getText().length()>=4) {
 					label.setText(
 							"Result: " +
