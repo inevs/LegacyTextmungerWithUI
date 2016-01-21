@@ -12,6 +12,8 @@ public class Ui extends JFrame {
 	private JButton doItButton;
 	private JLabel label;
 
+	private TextMunger textMunger = new TextMunger();
+
 	public Ui() {
 		initUI();
 	}
@@ -44,39 +46,14 @@ public class Ui extends JFrame {
 		doItButton.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent event) {
-				// 1. change point start, add ability to handle multiple words
-				// 2. find test points: test this functionality
 				String inputText = input.getText();
 				String outputText = "Result: ";
-				outputText += reverseText(inputText);
+				outputText += textMunger.reverseText(inputText);
 				label.setText(outputText);
-				// 1. change point end
 			}
 		});
 
 		mainPanel.add(doItButton, BorderLayout.CENTER);
-	}
-
-	String reverseText(String inputText) {
-		String text = "";
-		String[] words = inputText.split(" ");
-		for (String word : words) {
-			String reversedWord = reverseWord(word);
-			text = text + reversedWord + " ";
-		}
-		return text.trim();
-	}
-
-	private String reverseWord(String word) {
-		String reversedWord;
-		if (word.length() >= 4) {
-			reversedWord = word.charAt(0) +
-					new StringBuffer(word.substring(1, word.length() - 1)).reverse().toString() +
-					word.charAt(word.length() - 1);
-		} else {
-			reversedWord = word;
-		}
-		return reversedWord;
 	}
 
 }
