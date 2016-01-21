@@ -58,15 +58,25 @@ public class Ui extends JFrame {
 	}
 
 	String reverseText(String inputText) {
-		String reverse;
-		if (inputText.length() >= 4) {
-			reverse = inputText.charAt(0) +
-					new StringBuffer(inputText.substring(1, inputText.length() - 1)).reverse().toString() +
-					inputText.charAt(inputText.length() - 1);
-		} else {
-			reverse = inputText;
+		String text = "";
+		String[] words = inputText.split(" ");
+		for (String word : words) {
+			String reversedWord = reverseWord(word);
+			text = text + reversedWord + " ";
 		}
-		return reverse;
+		return text.trim();
+	}
+
+	private String reverseWord(String word) {
+		String reversedWord;
+		if (word.length() >= 4) {
+			reversedWord = word.charAt(0) +
+					new StringBuffer(word.substring(1, word.length() - 1)).reverse().toString() +
+					word.charAt(word.length() - 1);
+		} else {
+			reversedWord = word;
+		}
+		return reversedWord;
 	}
 
 }

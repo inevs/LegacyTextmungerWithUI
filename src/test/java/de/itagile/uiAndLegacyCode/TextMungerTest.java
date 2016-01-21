@@ -27,13 +27,11 @@ public class TextMungerTest {
 	}
 
 	@Test
-	@Ignore
 	public void leaves_multiple_words_with_three_letters() throws Exception {
 		assertThat(ui.reverseText("abc abc"), equalTo("abc abc"));
 	}
 
 	@Test
-	@Ignore
 	public void reverses_multiple_words() throws Exception {
 		assertThat(ui.reverseText("abcd efgh"), equalTo("acbd egfh"));
 	}
