@@ -48,19 +48,25 @@ public class Ui extends JFrame {
 				// 2. find test points: test this functionality
 				String inputText = input.getText();
 				String outputText = "Result: ";
-				if (inputText.length() >= 4) {
-					outputText += inputText.charAt(0) +
-							new StringBuffer(inputText.substring(1, inputText.length() - 1)).reverse().toString() +
-							inputText.charAt(inputText.length() - 1);
-				} else {
-					outputText += inputText;
-				}
+				outputText += reverseText(inputText);
 				label.setText(outputText);
 				// 1. change point end
 			}
 		});
 
 		mainPanel.add(doItButton, BorderLayout.CENTER);
+	}
+
+	private String reverseText(String inputText) {
+		String reverse;
+		if (inputText.length() >= 4) {
+			reverse = inputText.charAt(0) +
+					new StringBuffer(inputText.substring(1, inputText.length() - 1)).reverse().toString() +
+					inputText.charAt(inputText.length() - 1);
+		} else {
+			reverse = inputText;
+		}
+		return reverse;
 	}
 
 }
