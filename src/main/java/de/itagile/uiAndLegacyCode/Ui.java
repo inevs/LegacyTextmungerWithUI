@@ -1,14 +1,9 @@
 package de.itagile.uiAndLegacyCode;
 
-import java.awt.BorderLayout;
+import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JTextField;
 
 public class Ui extends JFrame {
 	private static final long serialVersionUID = 1L;
@@ -52,15 +47,15 @@ public class Ui extends JFrame {
 				// 1. change point start, add ability to handle multiple words
 				// 2. find test points: test this functionality
 				String inputText = input.getText();
-				if(inputText.length()>=4) {
-					label.setText(
-							"Result: " +
-							inputText.charAt(0) +
-							new StringBuffer(inputText.substring(1, inputText.length()-1)).reverse().toString() +
-							inputText.charAt(inputText.length()-1));
+				String outputText = "Result: ";
+				if (inputText.length() >= 4) {
+					outputText += inputText.charAt(0) +
+							new StringBuffer(inputText.substring(1, inputText.length() - 1)).reverse().toString() +
+							inputText.charAt(inputText.length() - 1);
 				} else {
-					label.setText("Result: " + inputText);
+					outputText += inputText;
 				}
+				label.setText(outputText);
 				// 1. change point end
 			}
 		});
