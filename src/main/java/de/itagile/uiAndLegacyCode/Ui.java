@@ -51,14 +51,15 @@ public class Ui extends JFrame {
 			public void actionPerformed(ActionEvent event) {
 				// 1. change point start, add ability to handle multiple words
 				// 2. find test points: test this functionality
-				if(input.getText().length()>=4) {
+				String inputText = input.getText();
+				if(inputText.length()>=4) {
 					label.setText(
 							"Result: " +
-							input.getText().charAt(0) + 
-							new StringBuffer(input.getText().substring(1, input.getText().length()-1)).reverse().toString() + 
-							input.getText().charAt(input.getText().length()-1));
+							inputText.charAt(0) +
+							new StringBuffer(inputText.substring(1, inputText.length()-1)).reverse().toString() +
+							inputText.charAt(inputText.length()-1));
 				} else {
-					label.setText("Result: " + input.getText());
+					label.setText("Result: " + inputText);
 				}
 				// 1. change point end
 			}
